@@ -186,5 +186,5 @@ JOIN order_products_prior op1 ON op1.order_id = o.order_id
 JOIN order_products_prior op2 ON op2.order_id = op1.order_id AND op2.product_id != op1.product_id
 JOIN products p1 ON p1.product_id = op1.product_id
 JOIN products p2 ON p2.product_id = op2.product_id
-WHERE order_dow NOT IN (6,0) -- taking weeekends as Saturday and Sunday
+WHERE order_dow NOT IN (6,0) -- taking weekday as Monday to Friday
 GROUP BY order_dow, product_1, product_2;
